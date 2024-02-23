@@ -40,6 +40,7 @@ export default function Home() {
             value="Scan for local stalker targets."
           ></input>
         </div>
+        {devices.length > 0 && <DeviceTable devices={devices}></DeviceTable>}
         <AudioRecorder
           onRecordingComplete={addAudioElement}
           audioTrackConstraints={{
@@ -49,7 +50,6 @@ export default function Home() {
           downloadOnSavePress={true}
           downloadFileExtension="webm"
         />
-        {devices.length > 0 && <DeviceTable devices={devices}></DeviceTable>}
       </main>
     </>
   );
