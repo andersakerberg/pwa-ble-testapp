@@ -5,7 +5,7 @@ const runtimeCaching = require('next-pwa/cache');
 
 const withPWA = require('next-pwa')({
   disable: false,
-  dest: 'out',
+  dest: 'public',
   register: true,
   disable: prod ? false : true,
   skipWaiting: true,
@@ -16,7 +16,6 @@ module.exports = withPWA({
   swcMinify: true,
   output: 'export',
   images: { unoptimized: true },
-  basePath: '/out',
   // webpack: (config) => {
   //   config.resolve.fallback = {
   //     fs: false,
