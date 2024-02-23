@@ -16,6 +16,7 @@ module.exports = withPWA({
   swcMinify: true,
   output: 'export',
   images: { unoptimized: true },
+  basePath: '/public',
   // webpack: (config) => {
   //   config.resolve.fallback = {
   //     fs: false,
