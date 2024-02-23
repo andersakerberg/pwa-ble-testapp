@@ -14,7 +14,6 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import DeleteIcon from '@mui/icons-material/Delete';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
@@ -46,9 +45,12 @@ const headCells: readonly HeadCell[] = [
 interface EnhancedTableProps {
   numSelected: number;
   onRequestSort: (
+    //@ts-ignore
     event: React.MouseEvent<unknown>,
+    //@ts-ignore
     property: keyof BluetoothDevice,
   ) => void;
+  //@ts-ignore
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   order: Order;
   orderBy: string;
@@ -152,7 +154,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
       {numSelected > 0 ? (
         <Tooltip title="Send message..">
           <IconButton>
-            <SendOutlinedIcon/>
+            <SendOutlinedIcon />
           </IconButton>
         </Tooltip>
       ) : (
@@ -174,13 +176,10 @@ export default function DeviceTable(props: Props) {
   const [order, setOrder] = React.useState<Order>('asc');
   const [orderBy, setOrderBy] = React.useState<keyof BluetoothDevice>('name');
   const [selected, setSelected] = React.useState<string[]>([]);
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
-
   const devices = props.devices;
 
   const handleRequestSort = (
-    event: React.MouseEvent<unknown>,
+    _event: React.MouseEvent<unknown>,
     property: keyof BluetoothDevice,
   ) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -197,7 +196,7 @@ export default function DeviceTable(props: Props) {
     setSelected([]);
   };
 
-  const handleClick = (event: React.MouseEvent<unknown>, id: string) => {
+  const handleClick = (_event: React.MouseEvent<unknown>, id: string) => {
     const selectedIndex = selected.indexOf(id);
     let newSelected: string[] = [];
 
@@ -214,17 +213,6 @@ export default function DeviceTable(props: Props) {
       );
     }
     setSelected(newSelected);
-  };
-
-  const handleChangePage = (event: unknown, newPage: number) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
   };
 
   const isSelected = (id: string) => selected.indexOf(id) !== -1;
