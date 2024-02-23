@@ -14,7 +14,6 @@ export default function Home() {
 
   const getBleDevices = useCallback(async () => {
     let response = await populateBluetoothDevices();
-    console.log(response);
     setDevices(response);
   }, []);
 
