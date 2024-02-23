@@ -1,0 +1,67 @@
+{
+  "name": "next-typescript-pwa-starter",
+  "version": "0.1.0",
+  "description": "Unofficial Next.js + Typescript + PWA starter with a latest package",
+  "author": "Danang Eko Alfianto <github.com/danangekal>",
+  "homepage": "https://github.com/danangekal/next-typescript-pwa-starter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danangekal/next-typescript-pwa-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danangekal/next-typescript-pwa-starter/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "reactjs",
+    "typescript",
+    "eslint",
+    "prettier",
+    "husky",
+    "lint-staged",
+    "pwa"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --ignore-path .gitignore \"**/*.+(js|ts|tsx|css|scss|json|md|html)\" --write",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "test": "echo \"Write tests!\" && exit 0",
+    "prepare": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
+    "next": "^14.1.0",
+    "next-pwa": "^5.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-voice-recorder-player": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.57",
+    "@types/react-dom": "^18.2.19",
+    "@types/web-bluetooth": "^0.0.20",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "pinst": "^3.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
